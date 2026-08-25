@@ -1,32 +1,20 @@
-# React + TypeScript + Vite
+# Ember & Oak — 3D Coffee Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Single-page coffee shop built with React + TypeScript, Vite, three.js (@react-three/fiber / drei) and Framer Motion.
 
-Currently, two official plugins are available:
+- Interactive 3D drink on the hero: drag to orbit, steam particles, floating beans, glass cups with ice for the cold drinks.
+- 8 drinks (latte, cappuccino, mocha, espresso, flat white, caramel macchiato, cold brew, matcha latte) with prices, calories and descriptions.
+- Menu cards with 3D tilt-on-hover, scroll reveals and animated CSS cups.
+- Cart drawer with quantities, live total and a "Buy now" checkout confirmation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Run
 
-## React Compiler
+Requires Node 22+.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Drink data (name, price, layer colors) lives in `src/data/menu.ts`.
